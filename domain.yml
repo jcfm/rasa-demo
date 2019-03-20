@@ -83,6 +83,7 @@ intents:
   - ask_faq_community_size
   - ask_faq_what_is_forum
   - next_step
+  - elaboration_explanation
 
 slots:
   budget:
@@ -354,6 +355,10 @@ templates:
     - text: 'Rasa NLU performs Natural Language Understanding, which means taking free-form text like "Please send the confirmation to amy@example.com" and turning it into structured data.'
   utter_explain_core:
     - text: "Rasa Core performs Dialog Management, which means keeping track of a conversation, and deciding how to proceed."
+  utter_explain_detailed_nlu:
+    - text: 'For a more detailed describtion of Rasa NLU please have a look at our documentation: https://rasa.com/docs/nlu/'
+  utter_explain_detailed_core:
+    - text: 'For a more detailed describtion of Rasa Core please have a look at our documentation: https://rasa.com/docs/core/'
   utter_also_explain_nlu:
     - text: "Would you also like me to explain Rasa NLU?"
   utter_also_explain_core:
@@ -524,6 +529,9 @@ templates:
           payload: "/get_started_step4"
   utter_no_more_steps:
     - text: "Looks like you've already completed all the steps!"
+  utter_why_response:
+    - text: "Why? That's a good question I cannot answer. I'm sorry."
+    - text: "Sorry, I'm just a bot. I cannot help you with that."
 
 
 actions:
@@ -597,6 +605,8 @@ actions:
   - utter_stack_details
   - utter_explain_nlucore
   - utter_explain_nlu
+  - utter_explain_detailed_core
+  - utter_explain_detailed_nlu
   - utter_explain_core
   - utter_also_explain_nlu
   - utter_also_explain_core
@@ -665,6 +675,7 @@ actions:
   - utter_link_to_forum
   - utter_direct_to_step2
   - utter_direct_step3
+  - utter_why_response
   - action_subscribe_newsletter
   - action_store_sales_info
   - action_store_budget

@@ -35,6 +35,23 @@ class ActionSubscribeNewsletter(Action):
         return []
 
 
+class ActionTellMoreAbout(Action):
+    """ This action tells your more about the product you asked for"""
+
+    def name(self):
+        return "action_tell_more_about"
+
+    def run(self, dispatcher, tracker, domain):
+        product = next(tracker.get_latest_entity_values('product'), None)
+
+        # retrieve the correct utterance dependent on the product
+        if product in ['core', 'nlu']:
+            dispatcher.utter_template('utter_details_about_' + product, tracker)
+        else:
+            dispatcher.utter_template('utter_out_of_scope', tracker)
+        return []
+
+
 class ActionStoreSalesInfo(Action):
     """Saves the information collected in the sales flow into a spreadsheet"""
 

@@ -2489,7 +2489,7 @@
 - Please take me to the next step
 - Next step please
 
-## intent:elaboration_explanation
+## intent:explain
 - tell me more about rasa [core](product)
 - tell me more about rasa [nlu](product)
 - I want more information on rasa [core](product)
@@ -2502,3 +2502,5 @@
 - i want more information
 - what is the difference
 - can you tell the difference
+- why
+- why is that

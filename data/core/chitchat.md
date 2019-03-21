@@ -861,8 +861,7 @@
     - utter_explain_core
     - utter_also_explain_nlu
 * explain
-    - slot{"product": "core"}
-    - action_tell_more_about
+    - utter_details_about_core
     - utter_also_explain_nlu
 * deny
     - utter_direct_to_step2
@@ -931,8 +930,7 @@
     - utter_explain_nlu
     - utter_also_explain_core
 * explain
-    - slot{"product": "nlu"}
-    - action_tell_more_about
+    - utter_details_about_nlu
     - utter_also_explain_core
 * deny
     - utter_direct_to_step2

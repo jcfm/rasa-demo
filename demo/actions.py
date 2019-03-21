@@ -35,28 +35,6 @@ class ActionSubscribeNewsletter(Action):
         return []
 
 
-class ActionTellMoreAbout(Action):
-    """ This action tells your more about the product you asked for"""
-
-    def name(self):
-        return "action_tell_more_about"
-
-    def run(self, dispatcher, tracker, domain):
-        product_entity = next(tracker.get_latest_entity_values('product'), None)
-        product_slot = tracker.get_slot('product')
-
-        # retrieve the correct utterance dependent on the product
-        if product_entity in ['core', 'nlu']:
-            dispatcher.utter_template('utter_details_about_' + product_entity,
-                                      tracker)
-        elif product_slot in ['core', 'nlu']:
-            dispatcher.utter_template('utter_details_about_' + product_slot,
-                                      tracker)
-        else:
-            dispatcher.utter_template('utter_out_of_scope', tracker)
-        return []
-
-
 class ActionStoreSalesInfo(Action):
     """Saves the information collected in the sales flow into a spreadsheet"""
 
